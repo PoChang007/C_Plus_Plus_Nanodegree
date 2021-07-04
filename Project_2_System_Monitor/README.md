@@ -25,4 +25,4 @@ This project uses [Make](https://www.gnu.org/software/make/). The Makefile has f
 
 4.  `cmake .. && make -j4`
 
-5. Run the resulting executable: `./build/monitor`
+5. Run the resulting executable: `./monitor`
