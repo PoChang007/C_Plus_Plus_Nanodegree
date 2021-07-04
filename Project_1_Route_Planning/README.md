@@ -3,6 +3,7 @@
 <img src="map.png" width="600" height="450" />
 
 ## Dependencies for Running Locally
+
 * cmake >= 3.11.3
   * All OSes: [click here for installation instructions](https://cmake.org/install/)
 * make >= 4.1 (Linux, Mac), 3.81 (Windows)
@@ -36,9 +37,16 @@ cmake --build .
 sudo make install
 ```
 
+## Cloning
+
+1. Clone the project repository: `git clone https://github.com/PoChang007/C_Plus_Plus_Nanodegree.git`
+
+2. Go to the Route Planning project directory: `cd C_Plus_Plus_Nanodegree/Project_1_Route_Planning`
+
 ## Compiling and Running
 
 ### Compiling
+
 To compile the project, first, create a `build` directory and change to that directory:
 ```
 mkdir build && cd build
@@ -49,6 +57,7 @@ cmake ..
 make
 ```
 ### Running
+
 The executable will be placed in the `build` directory. From within `build`, you can run the project as follows:
 ```
 ./OSM_A_star_search
