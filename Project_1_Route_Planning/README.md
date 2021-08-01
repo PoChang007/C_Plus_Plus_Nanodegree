@@ -1,4 +1,4 @@
-# Route Planning Project
+# Route Planning
 
 <img src="map.png" width="600" height="450" />
 
@@ -66,6 +66,12 @@ Or to specify a map file:
 ```
 ./OSM_A_star_search -f ../<your_osm_file.osm>
 ```
+
+## Usage
+
+The program will ask you to enter the starting position and the ending position at the beginning as stated below:  
+`Please enter start_x, start_y, end_x, end_y in order`  
+For example, just input `10 10 90 90` and press `Enter`, the shortest path will be drawn on the map.
 
 ## Testing
 
