@@ -24,8 +24,8 @@ public:
     void permitEntryToFirstInQueue();
 
 private:
-    std::vector<std::shared_ptr<Vehicle>> _vehicles;          // list of all vehicles waiting to enter this intersection
-    std::vector<std::promise<void>> _promises; // list of associated promises
+    std::vector<std::shared_ptr<Vehicle>> _vehicles; // list of all vehicles waiting to enter this intersection
+    std::vector<std::promise<void>> _promises;       // list of associated promises
     std::mutex _mutex;
 };
 
@@ -47,15 +47,14 @@ public:
     bool trafficLightIsGreen();
 
 private:
-
     // typical behaviour methods
     void processVehicleQueue();
 
     // private members
-    std::vector<std::shared_ptr<Street>> _streets;   // list of all streets connected to this intersection
-    WaitingVehicles _waitingVehicles; // list of all vehicles and their associated promises waiting to enter the intersection
-    bool _isBlocked;                  // flag indicating wether the intersection is blocked by a vehicle
-    TrafficLight _trafficLight; 
+    std::vector<std::shared_ptr<Street>> _streets; // list of all streets connected to this intersection
+    WaitingVehicles _waitingVehicles;              // list of all vehicles and their associated promises waiting to enter the intersection
+    bool _isBlocked;                               // flag indicating wether the intersection is blocked by a vehicle
+    TrafficLight _trafficLight;
 };
 
 #endif

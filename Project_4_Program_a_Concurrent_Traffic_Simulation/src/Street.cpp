@@ -3,7 +3,6 @@
 #include "Intersection.h"
 #include "Street.h"
 
-
 Street::Street()
 {
     _type = ObjectType::objectStreet;
