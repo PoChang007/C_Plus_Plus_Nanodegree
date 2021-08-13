@@ -20,7 +20,7 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
     std::vector<std::byte> contents(size);
 
     is.seekg(0);
-    is.read((char*)contents.data(), size);
+    is.read((char *)contents.data(), size);
 
     if (contents.empty())
         return std::nullopt;
@@ -65,7 +65,8 @@ int main(int argc, const char **argv)
     while (start_x < 0 || start_y < 0 || end_x < 0 || end_y < 0 ||
            start_x > 100 || start_y > 100 || end_x > 100 || end_y > 100)
     {
-        std::cout << "input coordinate is out of map, try again" << "\n";
+        std::cout << "input coordinate is out of map, try again"
+                  << "\n";
         std::cin >> start_x >> start_y >> end_x >> end_y;
     }
 
@@ -82,11 +83,9 @@ int main(int argc, const char **argv)
     Render render{model};
 
     auto display = io2d::output_surface{400, 400, io2d::format::argb32, io2d::scaling::none, io2d::refresh_style::fixed, 30};
-    display.size_change_callback([](io2d::output_surface &surface) {
-        surface.dimensions(surface.display_dimensions());
-    });
-    display.draw_callback([&](io2d::output_surface &surface) {
-        render.Display(surface);
-    });
+    display.size_change_callback([](io2d::output_surface &surface)
+                                 { surface.dimensions(surface.display_dimensions()); });
+    display.draw_callback([&](io2d::output_surface &surface)
+                          { render.Display(surface); });
     display.begin_show();
 }

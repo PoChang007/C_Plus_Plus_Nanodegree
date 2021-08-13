@@ -18,7 +18,7 @@ int Process::Pid() { return pid_; }
 float Process::CpuUtilization() { return processCpuInfo_; }
 
 // Return the command that generated this process
-string Process::Command() { return command_;}
+string Process::Command() { return command_; }
 
 // Return this process's memory utilization
 string Process::Ram() { return ram_; }
