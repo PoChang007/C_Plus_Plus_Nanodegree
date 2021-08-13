@@ -21,7 +21,7 @@ ChatBot::ChatBot()
 ChatBot::ChatBot(std::string filename)
 {
     std::cout << "ChatBot Constructor" << std::endl;
-    
+
     // invalidate data handles
     _chatLogic = nullptr;
     _rootNode = nullptr;
@@ -35,7 +35,7 @@ ChatBot::~ChatBot()
     std::cout << "ChatBot Destructor" << std::endl;
 
     // deallocate heap memory
-    if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
+    if (_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
         delete _image;
         _image = NULL;
@@ -53,7 +53,7 @@ ChatBot::ChatBot(const ChatBot &source) // copy constructor
     _rootNode = source._rootNode;
 }
 
-ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
+ChatBot &ChatBot::operator=(const ChatBot &source) // copy assignment operator
 {
     std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
     if (this == &source)
@@ -79,7 +79,7 @@ ChatBot::ChatBot(ChatBot &&source) // move constructor
     source._rootNode = nullptr;
 }
 
-ChatBot& ChatBot::operator=(ChatBot &&source) // move assignment operator
+ChatBot &ChatBot::operator=(ChatBot &&source) // move assignment operator
 {
     std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
     if (this == &source)
@@ -94,7 +94,7 @@ ChatBot& ChatBot::operator=(ChatBot &&source) // move assignment operator
     _image = source._image;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    _rootNode = source._rootNode;    
+    _rootNode = source._rootNode;
     source._image = NULL;
     source._chatLogic = nullptr;
     source._rootNode = nullptr;
@@ -126,7 +126,8 @@ void ChatBot::ReceiveMessageFromUser(std::string message)
     if (levDists.size() > 0)
     {
         // sort in ascending order of Levenshtein distance (best fit is at the top)
-        std::sort(levDists.begin(), levDists.end(), [](const EdgeDist &a, const EdgeDist &b) { return a.second < b.second; });
+        std::sort(levDists.begin(), levDists.end(), [](const EdgeDist &a, const EdgeDist &b)
+                  { return a.second < b.second; });
         newNode = levDists.at(0).first->GetChildNode(); // after sorting the best edge is at first position
     }
     else

@@ -7,7 +7,9 @@ The program first walks you through Object-Oriented Programming concepts and the
 
 Clone this repo: `git clone https://github.com/PoChang007/C_Plus_Plus_Nanodegree.git`
 
-Each project can be built individually. See the instruction in each project folder.
+## Build Instructions
+
+See the build instructions in each project folder.
 
 ## Project 1 - Route Planning
 

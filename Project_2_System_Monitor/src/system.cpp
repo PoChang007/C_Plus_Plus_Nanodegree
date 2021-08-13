@@ -18,25 +18,27 @@ bool compare(Process A, Process B)
 }
 
 // Return the system's CPU
-Processor& System::Cpu() { 
+Processor &System::Cpu()
+{
     Processor processor(LinuxParser::CpuUtilization());
     cpu_ = processor;
-    return cpu_; 
+    return cpu_;
 }
 
 // Return a container composed of the system's processes
-vector<Process>& System::Processes() {
+vector<Process> &System::Processes()
+{
     auto pidList = LinuxParser::Pids();
-    
+
     for (size_t i = 0; i < pidList.size(); ++i)
     {
         Process process(pidList[i], LinuxParser::Ram(pidList[i]), LinuxParser::User(pidList[i]),
-                        LinuxParser::UpTime(pidList[i]), LinuxParser::Command(pidList[i]), 
+                        LinuxParser::UpTime(pidList[i]), LinuxParser::Command(pidList[i]),
                         LinuxParser::CpuUtilizationProcess(pidList[i]));
         processes_.emplace_back(process);
     }
-    std::sort(processes_.begin(), processes_.end(), compare); 
-    return processes_; 
+    std::sort(processes_.begin(), processes_.end(), compare);
+    return processes_;
 }
 
 // Return the system's kernel identifier (string)
