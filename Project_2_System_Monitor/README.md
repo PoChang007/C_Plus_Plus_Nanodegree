@@ -1,6 +1,7 @@
 # System Monitor
 
-![System Monitor](images/monitor.png)
+<img src="images/monitor.png">
+<hr>
 
 ## ncurses
 
